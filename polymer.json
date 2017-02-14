@@ -1,0 +1,11 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/ubuntu-polymer-workshop-app.html",
+  "fragments": [
+  ],
+  "sources": [
+  ],
+  "includeDependencies": [
+    "bower_components/webcomponentsjs/webcomponents-lite.min.js",
+  ]
+}
