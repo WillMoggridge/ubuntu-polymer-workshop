@@ -1,0 +1,42 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+
+<dom-module id="github-issues">
+  <template>
+    <style>
+    </style>
+
+    <!-- <app-location route="{{route}}"></app-location>
+    <app-route
+        route="{{route}}"
+        pattern="/:page"
+        data="{{routeData}}"
+        tail="{{routeTail}}"></app-route> -->
+
+    <h2>GitHub issues</h2>
+
+    <!-- https://api.github.com/repos/ubuntudesign/www.ubuntu.com/issues -->
+    <iron-ajax
+      auto
+      url=""
+      handle-as="json"
+      last-response="{{response}}"></iron-ajax>
+
+    <template is="dom-repeat" items="{{response}}">
+    </template>
+  </template>
+  <script>
+    Polymer({
+      is: 'github-issues',
+
+      properties: {
+        url: {
+          computed: 'computeUrl(owner, repo)'
+        },
+      },
+    });
+  </script>
+</dom-module>
